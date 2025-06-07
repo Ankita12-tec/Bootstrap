@@ -1,0 +1,51 @@
+/* Custom styles for improved attractiveness and responsiveness */
+
+body {
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card {
+  border-radius: 0.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card-img-top {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  object-fit: cover;
+  height: 200px;
+}
+
+footer {
+  background-color: #343a40;
+  color: #adb5bd;
+}
+
+footer a {
+  color: #adb5bd;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+footer .text-muted {
+  color: #6c757d !important;
+}
+
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 150px;
+  }
+}
