@@ -38,14 +38,29 @@
                 >Home</a
               >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Our Team</a></li>
+                <li><a class="dropdown-item" href="#">Our Story</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Careers</a></li>
+              </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
             </li>
           </ul>
-          <form class="d-flex">
+          <form class="d-flex me-3">
             <input
               class="form-control me-2"
               type="search"
@@ -56,9 +71,54 @@
               Search
             </button>
           </form>
+          <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#subscribeModal">Subscribe</button>
+          <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</button>
         </div>
       </div>
     </nav>
+
+    <!-- Bootstrap Carousel -->
+    <div id="blogCarousel" class="carousel slide container my-4" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#blogCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#blogCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#blogCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner rounded shadow-sm">
+        <div class="carousel-item active">
+          <img src=" " class="d-block w-100" alt="Featured Post 1" />
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+          <img src="/images/first.png"class="d-block w-100" alt="Featured Post 1"/>
+          
+            
+            <h5>Featured Post One</h5>
+            <p>Highlighting the best of our blog posts.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://via.placeholder.com/900x300?text=Featured+Post+2" class="d-block w-100" alt="Featured Post 2" />
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+            <h5>Featured Post Two</h5>
+            <p>Insights and stories from our team.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://via.placeholder.com/900x300?text=Featured+Post+3" class="d-block w-100" alt="Featured Post 3" />
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+            <h5>Featured Post Three</h5>
+            <p>Latest updates and news.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#blogCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#blogCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
 
     <main class="container my-5">
       <div class="text-center mb-5">
@@ -74,11 +134,14 @@
               alt="Blog post 1"
             />
             <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Blog Post One</h5>
+              <h5 class="card-title">Blog Post One <span class="badge bg-primary ms-2">New</span></h5>
               <p class="card-text flex-grow-1">
                 This is a short description of the first blog post. It gives a
                 quick overview of the content.
               </p>
+              <div class="alert alert-info py-1 px-2 mb-2" role="alert">
+                Featured post
+              </div>
               <a href="#" class="btn btn-primary mt-auto">Read More</a>
             </div>
           </div>
@@ -139,6 +202,56 @@
         &copy; 2024 MyBlog. All rights reserved.
       </div>
     </footer>
+
+    <!-- Subscribe Modal -->
+    <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="subscribeModalLabel">Subscribe to Our Newsletter</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="subscriberEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="subscriberEmail" placeholder="name@example.com" />
+              </div>
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="contactName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="contactName" placeholder="Your name" />
+              </div>
+              <div class="mb-3">
+                <label for="contactEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="contactEmail" placeholder="name@example.com" />
+              </div>
+              <div class="mb-3">
+                <label for="contactMessage" class="form-label">Message</label>
+                <textarea class="form-control" id="contactMessage" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-secondary">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
